@@ -1,37 +1,41 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import {Routes,Route,Link} from "react-router-dom";
-import Home from './pages/home';
-import Create from './pages/create';
-import Edit from './pages/edit';
-import View from "./pages/view";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Layouts";
+
+import {
+  CreateFlotte,
+  EditFlotte,
+  HomeFlotte,
+  ViewFlotte,
+} from "./pages/flotte";
+
+import {
+  CreateGestionnaire,
+  EditGestionnaire,
+  HomeGestionnaire,
+  ViewGestionnaire,
+} from "./pages/gestionnaire";
 
 function App() {
-    return (
-      
-        <div>
-            <nav className="navbar navbar-expand navbar-dark bg-dark">
-                <div className="navbar-collapse collapse">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <Link to={"/"} className="nav-link">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to={"/create"} className="nav-link">Create</Link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <div className="container">
-                <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route exact path="/create" element={<Create />} />
-                    <Route exact path="/edit/:id" element={<Edit />} />
-                    <Route exact path="/view/:id" element={<View />} />
-                </Routes>
-            </div>
-                
-        </div>
-    );
+  return (
+    <Routes>
+      <Route component={Layout}>
+        {/* Routes Flottes */}
+        <Route path="/flottes" element={<HomeFlotte />} />
+        <Route path="/flottes/create" element={<CreateFlotte />} />
+        <Route path="/flottes/edit/:id" element={<EditFlotte />} />
+        <Route path="/flottes/view/:id" element={<ViewFlotte />} />
+
+        {/* Routes Gestionnaires */}
+        <Route path="/gestionnaires" element={<HomeGestionnaire />} />
+        <Route path="/gestionnaires/create" element={<CreateGestionnaire />} />
+        <Route path="/gestionnaires/edit/:id" element={<EditGestionnaire />} />
+        <Route path="/gestionnaires/view/:id" element={<ViewGestionnaire />} />
+
+        {/* Route par défaut */}
+        <Route path="/" element={<HomeFlotte />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;
