@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Routes, Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 
 import {
   CreateFlotte,
@@ -20,7 +20,7 @@ function App() {
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="navbar-collapse collapse">
-          <ul className="navbar-nav mr-auto">
+          <ul className="navbar-nav mr-auto container gap-3">
             <li className="nav-item">
               <Link to={"/flottes"} className="nav-link">
                 Flottes
@@ -44,7 +44,7 @@ function App() {
           </ul>
         </div>
       </nav>
-      <div className="container">
+      <div className="container mt-5">
         <Routes>
           {/* Routes Flottes */}
           <Route path="/flottes" element={<HomeFlotte />} />
