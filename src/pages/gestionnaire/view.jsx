@@ -7,8 +7,8 @@ export default function View() {
   const [inputs, setInputs] = useState({
     cniGestionnaire: "",
     title: "",
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     role: "",
   });
@@ -23,8 +23,8 @@ export default function View() {
       setInputs({
         cniGestionnaire: data.cniGestionnaire,
         title: data.title,
-        firstname: data.firstname,
-        lastname: data.lastname,
+        firstName: data.firstName,
+        lastName: data.lastName,
         email: data.email,
         role: data.role,
       });
@@ -48,11 +48,11 @@ export default function View() {
             </div>
             <div className="col-md-6">
               <h4>Prénom</h4>
-              <p>{inputs.firstname}</p>
+              <p>{inputs.firstName}</p>
             </div>
             <div className="col-md-6">
               <h4>Nom</h4>
-              <p>{inputs.lastname}</p>
+              <p>{inputs.lastName}</p>
             </div>
             <div className="col-md-6">
               <h4>Email</h4>

@@ -8,11 +8,11 @@ export default function Edit() {
   const [inputs, setInputs] = useState({
     cniGestionnaire: "",
     title: "",
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     passwordHash: "",
-    idGestionnaire: "",
+    id: "",
   });
   const { id } = useParams();
 
@@ -26,11 +26,11 @@ export default function Edit() {
       setInputs({
         cniGestionnaire: data.cniGestionnaire,
         title: data.title,
-        firstname: data.firstname,
-        lastname: data.lastname,
+        firstName: data.firstName,
+        lastName: data.lastName,
         email: data.email,
         passwordHash: "", // Ne pas afficher le mot de passe
-        idGestionnaire: data.idGestionnaire,
+        id: data.id,
       });
     } catch (error) {
       Swal.fire(
@@ -67,11 +67,7 @@ export default function Edit() {
       <h2>Modifier gestionnaire</h2>
       <div className="row">
         <div className="col-sm-8">
-          <input
-            type="hidden"
-            name="idGestionnaire"
-            value={inputs.idGestionnaire}
-          />
+          <input type="hidden" name="id" value={inputs.id} />
           <div className="row">
             <div className="col-md-6">
               <label>CNI Gestionnaire</label>
@@ -100,9 +96,9 @@ export default function Edit() {
               <input
                 className="form-control mb-2"
                 type="text"
-                name="firstname"
+                name="firstName"
                 required
-                value={inputs.firstname || ""}
+                value={inputs.firstName || ""}
                 onChange={handleChange}
               />
             </div>
@@ -111,9 +107,9 @@ export default function Edit() {
               <input
                 className="form-control mb-2"
                 type="text"
-                name="lastname"
+                name="lastName"
                 required
-                value={inputs.lastname || ""}
+                value={inputs.lastName || ""}
                 onChange={handleChange}
               />
             </div>

@@ -23,6 +23,7 @@ export default function Home() {
       setLoading(false);
     }
   };
+  console.log(gestionnaires);
   const deleteGestionnaire = async (id) => {
     try {
       await gestionnaireService.delete(id);
@@ -64,7 +65,7 @@ export default function Home() {
         </thead>
         <tbody>
           {gestionnaires.map((gestionnaire, index) => (
-            <tr key={gestionnaire.idGestionnaire}>
+            <tr key={gestionnaire.id}>
               <td>{index + 1}</td>
               <td>{gestionnaire.cniGestionnaire}</td>
               <td>{gestionnaire.title}</td>
@@ -75,22 +76,20 @@ export default function Home() {
               <td>
                 <Link
                   className="btn btn-info me-2"
-                  to={`/gestionnaires/edit/${gestionnaire.idGestionnaire}`}
+                  to={`/gestionnaires/edit/${gestionnaire.id}`}
                 >
                   Edit
                 </Link>
                 <Link
                   className="btn btn-primary me-2"
-                  to={`/gestionnaires/view/${gestionnaire.idGestionnaire}`}
+                  to={`/gestionnaires/view/${gestionnaire.id}`}
                 >
                   View
                 </Link>
                 <button
                   type="button"
                   className="btn btn-danger"
-                  onClick={() =>
-                    deleteGestionnaire(gestionnaire.idGestionnaire)
-                  }
+                  onClick={() => deleteGestionnaire(gestionnaire.id)}
                 >
                   Supprimer
                 </button>

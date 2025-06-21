@@ -6,8 +6,8 @@ const validateGestionnaireData = (data, isUpdate = false) => {
   if (
     !data.cniGestionnaire ||
     !data.title ||
-    !data.firstname ||
-    !data.lastname ||
+    !data.firstName ||
+    !data.lastName ||
     !data.email
   ) {
     throw new Error("Tous les champs obligatoires doivent être remplis");

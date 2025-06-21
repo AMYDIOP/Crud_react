@@ -7,8 +7,8 @@ export default function Create() {
   const [inputs, setInputs] = useState({
     cniGestionnaire: "",
     title: "",
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     passwordHash: "",
   });
@@ -63,9 +63,9 @@ export default function Create() {
               <input
                 className="form-control mb-2"
                 type="text"
-                name="firstname"
+                name="firstName"
                 required
-                value={inputs.firstname || ""}
+                value={inputs.firstName || ""}
                 onChange={handleChange}
               />
             </div>
@@ -74,9 +74,9 @@ export default function Create() {
               <input
                 className="form-control mb-2"
                 type="text"
-                name="lastname"
+                name="lastName"
                 required
-                value={inputs.lastname || ""}
+                value={inputs.lastName || ""}
                 onChange={handleChange}
               />
             </div>
