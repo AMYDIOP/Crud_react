@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { gestionnaireService } from "../../services";
 
-export default function Edit(props) {
+export default function Edit() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     cniGestionnaire: "",
@@ -19,6 +19,7 @@ export default function Edit(props) {
   useEffect(() => {
     fetchGestionnaire();
   }, []);
+
   const fetchGestionnaire = async () => {
     try {
       const data = await gestionnaireService.getById(id);

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { gestionnaireService } from "../../services";
 
-export default function View(props) {
+export default function View() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     cniGestionnaire: "",

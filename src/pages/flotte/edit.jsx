@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { flotteService } from "../../services";
 
-export default function Edit(props) {
+export default function Edit() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     matriculeFlotte: "",
