@@ -68,8 +68,8 @@ export default function Home() {
               <td>{index + 1}</td>
               <td>{gestionnaire.cniGestionnaire}</td>
               <td>{gestionnaire.title}</td>
-              <td>{gestionnaire.firstname}</td>
-              <td>{gestionnaire.lastname}</td>
+              <td>{gestionnaire.firstName}</td>
+              <td>{gestionnaire.lastName}</td>
               <td>{gestionnaire.email}</td>
               <td>{gestionnaire.role}</td>
               <td>
