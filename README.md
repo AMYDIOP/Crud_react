@@ -192,7 +192,7 @@ La configuration API est actuellement codée en dur dans `src/services/http.js`.
 
 ```javascript
 // Exemple de configuration flexible
-const baseURL = import.meta.env.VITE_API_URL || "http://localhost:5127/api";
+const baseURL = process.env.VITE_API_URL || "http://localhost:5127/api";
 ```
 
 ### Endpoints API Attendus
